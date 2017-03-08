@@ -1,7 +1,8 @@
 .globl swap, getLeftChildIndex, getRightChildIndex
 
+# $s0 = base
 main:
-  lui $s0, 0x1004        # $s0 = 0x10040000
+  lui $s0, 0x1004        # base = 0x10040000
   li $t0, 2              # $t0 = 2
   sw $t0, ($s0)          # array[0] = $t0
   li $t0, 5              # $t0 = 5
@@ -16,7 +17,7 @@ main:
   jal getRightChildIndex # getRightChildIndex(index)
 
   li $v0, 10             # $v0 = 10
-  syscall                # halt
+  syscall                # exit
 
 swap:
   sll $t0, $a0, 2        # $t0 = i * 4
@@ -30,11 +31,11 @@ swap:
   jr $ra
 
 getLeftChildIndex:
-  sll $t0, $a0, 2        # $t0 = index * 2
-  addi $v0, $t0, 1       # $v0 = $t0 + 1
+  sll $v0, $a0, 2        # $v0 = 2 * index
+  addi $v0, $v0, 1       # $v0 += 1
   jr $ra                 # return $v0
 
 getRightChildIndex:
-  sll $t0, $a0, 2        # $t0 = index * 2
-  addi $v0, $t0, 2       # $v0 = $t0 + 2
+  sll $v0, $a0, 2        # $v0 = 2 * index
+  addi $v0, $v0, 2       # $v0 += 2
   jr $ra                 # return $v0
