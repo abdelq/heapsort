@@ -11,9 +11,8 @@ initialiser:
   li $v0, 5         # $v0 = 5
   syscall           # read integer
   move $s1, $v0     # n = $v0
-
 # $s2 = i
-loop:
+for:
   slt $t0, $s2, $s1 # $t0 = i < n
   beqz $t0, done    # if (i < n == false) done()
   sll $t0, $s2, 2   # $t0 = i * 4
@@ -23,7 +22,6 @@ loop:
   move $t1, $v0     # $t1 = $v0
   sw $t1, ($t0)     # array[i] = $t1
   addi $s2, $s2, 1  # i += 1
-  j loop
-
+  j for
 done:
   jr $ra            # return
