@@ -14,7 +14,7 @@ initialiser:
 # $s2 = i
 for:
   slt $t0, $s2, $s1 # $t0 = i < n
-  beqz $t0, done    # if (i < n == false) done()
+  beqz $t0, done    # if ($t0 == 0) done()
   sll $t0, $s2, 2   # $t0 = i * 4
   add $t0, $t0, $s0 # $t0 = &array[i]
   li $v0, 5         # $v0 = 5
