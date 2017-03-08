@@ -10,7 +10,7 @@ initialiser:
   lui $s0, 0x1004   # $s0 = 0x10040000
   li $v0, 5         # $v0 = 5
   syscall           # stdin
-  move $s1, $v0     # $s1 = $v0
+  move $s1, $v0     # n = $v0
 
 loop:
   slt $t0, $s2, $s1 # i < n ?
