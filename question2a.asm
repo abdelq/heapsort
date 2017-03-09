@@ -33,11 +33,11 @@ swap:
   jr $ra
 
 getLeftChildIndex:
-  sll $v0, $a0, 2        # $v0 = index * 2
+  sll $v0, $a0, 1        # $v0 = index * 2
   addi $v0, $v0, 1       # $v0 += 1
   jr $ra                 # return $v0
 
 getRightChildIndex:
-  sll $v0, $a0, 2        # $v0 = index * 2
+  sll $v0, $a0, 1        # $v0 = index * 2
   addi $v0, $v0, 2       # $v0 += 2
   jr $ra                 # return $v0
