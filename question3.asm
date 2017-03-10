@@ -33,11 +33,11 @@ else:
   sll $t0, $a0, 1   # $t0 = n * 2
   add $t0, $v0, $t0 # $t0 = suite(n - 1) + $t0
   rem $t0, $t0, 7   # $t0 %= 7
-  move $a0, $t0     # $a0 = $t0
-  li $v0, 1         # $v0 = 1
-  syscall           # print integer
   la $a0, newline   # $a0 = &newline
   li $v0, 4         # $v0 = 4
   syscall           # print string
+  move $a0, $t0     # $a0 = $t0
+  li $v0, 1         # $v0 = 1
+  syscall           # print integer
   move $v0, $t0     # $v0 = $t0
   jr $ra            # return
