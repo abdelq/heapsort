@@ -10,7 +10,7 @@ This is an implementation of the algorithm in the book Big Java, by Cay S. Horst
 
 ## Usage
 
-* Make sure that `Settings -> Assemble all files in directory` is checked.
+* Make sure that *Settings -> Assemble all files in directory* is checked.
 * Assemble and run `heapsort.asm`.
 
 ## License
