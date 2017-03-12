@@ -2,7 +2,10 @@
 
 A [heapsort](https://en.wikipedia.org/wiki/Heapsort) in MIPS assembly language.
 
-This is an implementation of the algorithm in the book Big Java, by Cay S. Horstmann.
+This is an implementation of the algorithm in the book Big Java, by Cay S. Horstmann,
+originally an assignment for a [computer architecture](//admission.umontreal.ca/cours-et-horaires/cours/ift-1227) class at [Université de Montréal](//umontreal.ca).
+
+The full assignment is on the assignment branch of this repository.
 
 ## Requirements
 
