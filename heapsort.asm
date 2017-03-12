@@ -1,5 +1,7 @@
+# $s0 = base
 main:
-  jal initialiser        # initialiser()
+  lui $s0, 0x1004        # base = 0x10040000
+  jal input              # input()
   jal sort               # sort()
   li $v0, 10             # $v0 = 10
   syscall                # exit

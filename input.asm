@@ -1,18 +1,12 @@
-.globl initialiser
+.globl input
 
 .data
-length: .asciiz "Taille du tableau : " 
-content: .asciiz "Contenu du tableau :\n" 
+length: .asciiz "Length of the array: " 
+content: .asciiz "Content of the array:\n" 
 
 .text
-main:
-  jal initialiser   # initialiser()
-  li $v0, 10        # $v0 = 10
-  syscall           # exit
-
-# $s0 = base, $s1 = n
-initialiser:
-  lui $s0, 0x1004   # base = 0x10040000
+# $s1 = n
+input:
   la $a0, length    # $a0 = &length
   li $v0, 4         # $v0 = 4
   syscall           # print string
@@ -22,7 +16,7 @@ initialiser:
   la $a0, content   # $a0 = &content
   li $v0, 4         # $v0 = 4
   syscall           # print string
-# $s2 = i
+# $s0 = base, $s2 = i
 for:
   slt $t0, $s2, $s1 # $t0 = i < n
   beqz $t0, done    # if ($t0 == 0) done()
